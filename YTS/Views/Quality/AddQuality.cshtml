@@ -1,0 +1,53 @@
+﻿@model YTS.Models.ViewModels.AdminVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var title = "Add New Quality";
+
+    if(Model.Quality.Id != 0)
+    {
+        ViewData["Title"] = "Update Quality";
+    }
+    else
+    {
+        ViewData["Title"] = "Add New Quality";
+    }
+}
+
+<div class="container">
+    <div class="col-4 m-0 m-auto border rounded bg-light">
+        <form method="post" asp-action="AddQuality" class="col-12">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @if(Model.Quality.Id != 0)
+            {
+                <input type="hidden" asp-for="@Model.Quality.Id" />
+                title = "Update Quality";
+            }
+
+            <div class="row">
+                <h3 class="pt-2">@title</h3>
+            </div>
+
+            <hr />
+
+            <div class="row form-group">
+                <label>Quality</label>
+                <input asp-for="@Model.Quality.Qual" class="form-control" />
+                <span asp-validation-for="@Model.Quality.Qual" class="text-danger"></span>
+            </div>
+
+            <div class="row form-group">
+                @if (Model.Quality.Id != 0)
+                {
+                    <partial name="_EditeAndBackBtn" model="@Model.Quality.Id" />
+                }
+                else
+                {
+                    <partial name="_CreateAndBackBtn" />
+                }
+            </div>
+
+        </form>
+    </div>
+</div>
