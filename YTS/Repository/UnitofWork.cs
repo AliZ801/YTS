@@ -15,9 +15,12 @@ namespace YTS.Repository
         {
             _db = db;
             Quality = new QualityRepo(_db);
+            Genres = new GenresRepo(_db);
         }
 
         public IQualityRepo Quality { get; private set; }
+
+        public IGenresRepo Genres { get; private set; }
 
         public void Dispose()
         {

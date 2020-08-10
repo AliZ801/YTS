@@ -431,3 +431,5 @@ C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\R
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Quality\AddQuality.cshtml.g.cs
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EditAndBackBtn.cshtml.g.cs
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CreateAndBackBtn.cshtml.g.cs
+C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Genres\Index.cshtml.g.cs
+C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Genres\AddGenre.cshtml.g.cs

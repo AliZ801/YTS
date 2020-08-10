@@ -2,27 +2,27 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    var title = "Add New Quality";
+    var title = "Add New Genre";
 
-    if(Model.Quality.Id != 0)
+    if (Model.Genres.Id != 0)
     {
-        ViewData["Title"] = "Update Quality";
+        ViewData["Title"] = "Update Genre";
     }
     else
     {
-        ViewData["Title"] = "Add New Quality";
+        ViewData["Title"] = "Add New Genre";
     }
 }
 
 <div class="container">
     <div class="col-4 m-0 m-auto border rounded bg-light">
-        <form method="post" asp-action="AddQuality" class="col-12">
+        <form method="post" asp-action="AddGenre" class="col-12">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            @if(Model.Quality.Id != 0)
+            @if (Model.Genres.Id != 0)
             {
-                <input type="hidden" asp-for="@Model.Quality.Id" />
-                title = "Update Quality";
+                <input type="hidden" asp-for="@Model.Genres.Id" />
+                title = "Update Genre";
             }
 
             <div class="row">
@@ -32,15 +32,15 @@
             <hr />
 
             <div class="row form-group">
-                <label>Quality</label>
-                <input asp-for="@Model.Quality.Qual" class="form-control" />
-                <span asp-validation-for="@Model.Quality.Qual" class="text-danger"></span>
+                <label asp-for="@Model.Genres.Genre"></label>
+                <input asp-for="@Model.Genres.Genre" class="form-control" />
+                <span asp-validation-for="@Model.Genres.Genre" class="text-danger"></span>
             </div>
 
             <div class="row form-group">
-                @if (Model.Quality.Id != 0)
+                @if (Model.Genres.Id != 0)
                 {
-                    <partial name="_EditAndBackBtn" model="@Model.Quality.Id" />
+                    <partial name="_EditAndBackBtn" model="@Model.Genres.Id" />
                 }
                 else
                 {

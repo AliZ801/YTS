@@ -9,6 +9,8 @@ namespace YTS.Repository.IRepository
     {
         IQualityRepo Quality { get; }
 
+        IGenresRepo Genres { get; }
+
         void Save();
     }
 }

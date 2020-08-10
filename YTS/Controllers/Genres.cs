@@ -8,14 +8,14 @@ using YTS.Repository.IRepository;
 
 namespace YTS.Controllers
 {
-    public class Quality : Controller
+    public class Genres : Controller
     {
         private readonly IUnitofWork _unitofWork;
 
         [BindProperty]
         public AdminVM AVM { get; set; }
 
-        public Quality(IUnitofWork unitofWork)
+        public Genres(IUnitofWork unitofWork)
         {
             _unitofWork = unitofWork;
         }
@@ -25,13 +25,13 @@ namespace YTS.Controllers
             return View();
         }
 
-        public IActionResult AddQuality(int? id)
+        public IActionResult AddGenre(int? id)
         {
-            AVM = new AdminVM() { Quality = new Models.Quality() };
+            AVM = new AdminVM() { Genres = new Models.Genres() };
 
             if(id != null)
             {
-                AVM.Quality = _unitofWork.Quality.Get(id.GetValueOrDefault());
+                AVM.Genres = _unitofWork.Genres.Get(id.GetValueOrDefault());
             }
 
             return View(AVM);
@@ -39,17 +39,17 @@ namespace YTS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddQuality()
+        public IActionResult AddGenre()
         {
             if (ModelState.IsValid)
             {
-                if(AVM.Quality.Id == 0)
+                if(AVM.Genres.Id == 0)
                 {
-                    _unitofWork.Quality.Add(AVM.Quality);
+                    _unitofWork.Genres.Add(AVM.Genres);
                 }
                 else
                 {
-                    _unitofWork.Quality.Update(AVM.Quality);
+                    _unitofWork.Genres.Update(AVM.Genres);
                 }
 
                 _unitofWork.Save();
@@ -66,23 +66,23 @@ namespace YTS.Controllers
 
         public IActionResult GetAll()
         {
-            return Json(new { data = _unitofWork.Quality.GetAll() });
+            return Json(new { data = _unitofWork.Genres.GetAll() });
         }
 
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            var qFromDb = _unitofWork.Quality.Get(id);
+            var gFromDb = _unitofWork.Genres.Get(id);
 
-            if(qFromDb == null)
+            if(gFromDb == null)
             {
-                return Json(new { success = false, message = "Error Deleting Quality Record!" });
+                return Json(new { success = false, message = "Error Deleting Genre Record!" });
             }
 
-            _unitofWork.Quality.Remove(qFromDb);
+            _unitofWork.Genres.Remove(gFromDb);
             _unitofWork.Save();
 
-            return Json(new { success = true, message = "Quality Record Deleted Successfully!" });
+            return Json(new { success = true, message = "Genre Record Deleted Successfully!" });
         }
 
         #endregion
