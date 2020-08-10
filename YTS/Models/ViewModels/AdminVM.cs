@@ -12,9 +12,13 @@ namespace YTS.Models.ViewModels
 
         public Genres Genres { get; set; }
 
+        public Ratings Ratings { get; set; }
+
         //DropDown Lists
         public IEnumerable<SelectListItem> QualityList { get; set; }
 
         public IEnumerable<SelectListItem> GenresList { get; set; }
+
+        public IEnumerable<SelectListItem> RatingsList { get; set; }
     }
 }

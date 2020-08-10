@@ -17,5 +17,7 @@ namespace YTS.Data
         public DbSet<Quality> Qualities { get; set; }
 
         public DbSet<Genres> Genres { get; set; }
+
+        public DbSet<Ratings> Ratings { get; set; }
     }
 }

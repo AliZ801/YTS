@@ -11,6 +11,8 @@ namespace YTS.Repository.IRepository
 
         IGenresRepo Genres { get; }
 
+        IRatingsRepo Ratings { get; }
+
         void Save();
     }
 }
