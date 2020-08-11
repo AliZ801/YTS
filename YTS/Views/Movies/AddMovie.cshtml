@@ -23,114 +23,114 @@
         title = "Update Movie";
     }
 
-<div class="col-12">
+    <div class="col-12">
 
-    <div class="row justify-content-center">
-        <h3 class="pt-2">@title</h3>
-    </div>
+        <div class="row justify-content-center">
+            <h3 class="pt-2">@title</h3>
+        </div>
 
-    <hr />
+        <hr />
 
-    <div class="row">
-        <div class="col-8">
-            <div class="row form-group">
-                <div class="col-4">
-                    <label asp-for="@Model.Movies.Title"></label>
+        <div class="row">
+            <div class="col-8">
+                <div class="row form-group">
+                    <div class="col-4">
+                        <label asp-for="@Model.Movies.Title"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="@Model.Movies.Title" class="form-control" />
+                        <span asp-validation-for="@Model.Movies.Title" class="text-danger"></span>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <input asp-for="@Model.Movies.Title" class="form-control" />
-                    <span asp-validation-for="@Model.Movies.Title" class="text-danger"></span>
+
+                <div class="row form-group">
+                    <div class="col-4">
+                        <label>Quality</label>
+                    </div>
+                    <div class="col-8">
+                        @Html.DropDownListFor(i => i.Movies.QualityId, Model.QualityList, "Select Quality", new { @class = "form-control" })
+                    </div>
                 </div>
+
+                <div class="row form-group">
+                    <div class="col-4">
+                        <label asp-for="@Model.Movies.Genre"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="@Model.Movies.Genre" class="form-control" />
+                        <span asp-validation-for="@Model.Movies.Genre" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-4">
+                        <label asp-for="@Model.Movies.Rating"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="@Model.Movies.Rating" class="form-control" />
+                        <span asp-validation-for="@Model.Movies.Rating" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-4">
+                        <label asp-for="@Model.Movies.ImageUrl"></label>
+                    </div>
+                    <div class="col-8">
+                        <input type="file" name="files" id="uploadBox" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-4">
+                        <label asp-for="@Model.Movies.Date"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="@Model.Movies.Date" class="form-control" />
+                        <span asp-validation-for="@Model.Movies.Date" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-4">
+                        <label asp-for="@Model.Movies.Description"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="@Model.Movies.Description" class="form-control" style="height:300px"></textarea>
+                        <span asp-validation-for="@Model.Movies.Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    @if (Model.Movies.Id != 0)
+                    {
+                        <partial name="_EditAndBackBtn" model="@Model.Movies.Id" />
+                    }
+                    else
+                    {
+                        <div class="col-5">
+                            <button type="submit" onclick="return validateInput()" class="btn btn-primary text-white form-control">Create</button>
+                        </div>
+                        <div class="col-5">
+                            <a asp-action="Index" class="btn btn-primary text-white form-control">Back to List</a>
+                        </div>
+                    }
+                </div>
+
             </div>
-
-            <div class="row form-group">
-                <div class="col-4">
-                    <label>Quality</label>
-                </div>
-                <div class="col-8">
-                    @Html.DropDownListFor(i => i.Movies.QualityId, Model.QualityList, "Select Quality", new { @class = "form-control" })
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-4">
-                    <label asp-for="@Model.Movies.Genre"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="@Model.Movies.Genre" class="form-control" />
-                    <span asp-validation-for="@Model.Movies.Genre" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-4">
-                    <label asp-for="@Model.Movies.Rating"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="@Model.Movies.Rating" class="form-control" />
-                    <span asp-validation-for="@Model.Movies.Rating" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-4">
-                    <label asp-for="@Model.Movies.ImageUrl"></label>
-                </div>
-                <div class="col-8">
-                    <input type="file" name="files" id="uploadBox" class="form-control" />
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-4">
-                    <label asp-for="@Model.Movies.Date"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="@Model.Movies.Date" class="form-control" />
-                    <span asp-validation-for="@Model.Movies.Date" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-4">
-                    <label asp-for="@Model.Movies.Description"></label>
-                </div>
-                <div class="col-8">
-                    <textarea asp-for="@Model.Movies.Description" class="form-control" style="height:300px"></textarea>
-                    <span asp-validation-for="@Model.Movies.Description" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="row form-group">
+            <div class="col-4">
                 @if (Model.Movies.Id != 0)
                 {
-                    <partial name="_EditAndBackBtn" model="@Model.Movies.Id" />
-                }
-                else
-                {
-                    <div class="col-5">
-                        <button type="submit" onclick="return validateInput()" class="btn btn-primary text-white form-control">Create</button>
-                    </div>
-                    <div class="col-5">
-                        <a asp-action="Index" class="btn btn-primary text-white form-control">Back to List</a>
-                    </div>
+                    <img src="@Model.Movies.ImageUrl" class="img-thumbnail pb-3" />
                 }
             </div>
+        </div>
 
-        </div>
-        <div class="col-4">
-            @if (Model.Movies.Id != 0)
-            {
-                <img src="@Model.Movies.ImageUrl" class="img-thumbnail" />
-            }
-        </div>
     </div>
-
-</div>
 
 </form>
 
-@section Scripts{ 
+@section Scripts{
     <script>
         function validateInput() {
             if (document.getElementById('uploadBox').value == '') {

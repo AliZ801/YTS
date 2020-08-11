@@ -432,3 +432,4 @@ C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\s
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.dll
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.pdb
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.genruntimeconfig.cache
+C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.csprojAssemblyReference.cache

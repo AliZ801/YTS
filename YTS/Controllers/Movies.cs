@@ -60,7 +60,7 @@ namespace YTS.Controllers
                     var uploads = Path.Combine(webRootPath, @"Images\Movies");
                     var extension = Path.GetExtension(files[0].FileName);
 
-                    using(var fileStreams = new FileStream(Path.Combine(uploads, fileName+extension), FileMode.Create))
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                     {
                         files[0].CopyTo(fileStreams);
                     }

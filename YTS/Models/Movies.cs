@@ -36,5 +36,9 @@ namespace YTS.Models
 
         [Required]
         public string Description { get; set; }
+
+        [DataType(DataType.Upload)]
+        [Display(Name = "File")]
+        public string FileUrl { get; set; }
     }
 }
