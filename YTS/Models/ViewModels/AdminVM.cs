@@ -14,6 +14,8 @@ namespace YTS.Models.ViewModels
 
         public Ratings Ratings { get; set; }
 
+        public Movies Movies { get; set; }
+
         //DropDown Lists
         public IEnumerable<SelectListItem> QualityList { get; set; }
 

@@ -13,6 +13,8 @@ namespace YTS.Repository.IRepository
 
         IRatingsRepo Ratings { get; }
 
+        IMoviesRepo Movies { get; }
+
         void Save();
     }
 }

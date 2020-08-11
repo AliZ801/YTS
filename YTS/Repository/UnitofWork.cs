@@ -17,6 +17,7 @@ namespace YTS.Repository
             Quality = new QualityRepo(_db);
             Genres = new GenresRepo(_db);
             Ratings = new RatingsRepo(_db);
+            Movies = new MoviesRepo(_db);
         }
 
         public IQualityRepo Quality { get; private set; }
@@ -24,6 +25,8 @@ namespace YTS.Repository
         public IGenresRepo Genres { get; private set; }
 
         public IRatingsRepo Ratings { get; private set; }
+
+        public IMoviesRepo Movies { get; private set; }
 
         public void Dispose()
         {

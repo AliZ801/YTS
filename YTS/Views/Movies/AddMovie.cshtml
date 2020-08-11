@@ -1,0 +1,131 @@
+﻿@model YTS.Models.ViewModels.AdminVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var title = "Add New Movie";
+
+    if (Model.Movies.Id != 0)
+    {
+        ViewData["Title"] = "Update Movie";
+    }
+    else
+    {
+        ViewData["Title"] = "Add New Movie";
+    }
+}
+
+<form method="post" asp-action="AddMovie" class="border rounded bg-light" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    @if (Model.Movies.Id != 0)
+    {
+        <input type="hidden" asp-for="@Model.Movies.Id" />
+        title = "Update Movie";
+    }
+
+<div class="col-12">
+
+    <div class="row justify-content-center">
+        <h3 class="pt-2">@title</h3>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-8">
+            <div class="row form-group">
+                <div class="col-4">
+                    <label asp-for="@Model.Movies.Title"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Movies.Title" class="form-control" />
+                    <span asp-validation-for="@Model.Movies.Title" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-4">
+                    <label>Quality</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(i => i.Movies.QualityId, Model.QualityList, "Select Quality", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-4">
+                    <label>Genre</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(i => i.Movies.GenreId, Model.GenresList, "Select Genre", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-4">
+                    <label>Rating</label>
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(i => i.Movies.RatingId, Model.RatingsList, "Select Rating", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-4">
+                    <label asp-for="@Model.Movies.ImageUrl"></label>
+                </div>
+                <div class="col-8">
+                    <input type="file" name="files" id="uploadBox" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-4">
+                    <label asp-for="@Model.Movies.Date"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Movies.Date" class="form-control" />
+                    <span asp-validation-for="@Model.Movies.Date" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                @if (Model.Movies.Id != 0)
+                {
+                    <partial name="_EditAndBackBtn" model="@Model.Movies.Id" />
+                }
+                else
+                {
+                    <div class="col-5">
+                        <button type="submit" onclick="return validateInput()" class="btn btn-primary text-white form-control">Create</button>
+                    </div>
+                    <div class="col-5">
+                        <a asp-action="Index" class="btn btn-primary text-white form-control">Back to List</a>
+                    </div>
+                }
+            </div>
+
+        </div>
+        <div class="col-4">
+            @if (Model.Movies.Id != 0)
+            {
+                <img src="@Model.Movies.ImageUrl" class="img-thumbnail" />
+            }
+        </div>
+    </div>
+
+</div>
+
+</form>
+
+@section Scripts{ 
+    <script>
+        function validateInput() {
+            if (document.getElementById('uploadBox').value == '') {
+                swal("Error", "Please Select an Image!", "error");
+                return false;
+            }
+            return true;
+        }
+    </script>
+}
