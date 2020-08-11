@@ -15,16 +15,10 @@ namespace YTS.Repository
         {
             _db = db;
             Quality = new QualityRepo(_db);
-            Genres = new GenresRepo(_db);
-            Ratings = new RatingsRepo(_db);
             Movies = new MoviesRepo(_db);
         }
 
         public IQualityRepo Quality { get; private set; }
-
-        public IGenresRepo Genres { get; private set; }
-
-        public IRatingsRepo Ratings { get; private set; }
 
         public IMoviesRepo Movies { get; private set; }
 

@@ -22,16 +22,10 @@ namespace YTS.Models
         public Quality Quality { get; set; }
 
         [Required]
-        public int GenreId { get; set; }
-
-        [ForeignKey("GenreId")]
-        public Genres Genres { get; set; }
+        public string Genre { get; set; }
 
         [Required]
-        public int RatingId { get; set; }
-
-        [ForeignKey("RatingId")]
-        public Ratings Ratings { get; set; }
+        public float Rating { get; set; }
 
         [Required]
         public string Date { get; set; }
@@ -39,5 +33,8 @@ namespace YTS.Models
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Art")]
         public string ImageUrl { get; set; }
+
+        [Required]
+        public string Description { get; set; }
     }
 }

@@ -23,10 +23,11 @@ namespace YTS.Repository
 
             mFromDb.Title = movies.Title;
             mFromDb.QualityId = movies.QualityId;
-            mFromDb.GenreId = movies.GenreId;
-            mFromDb.RatingId = movies.RatingId;
+            mFromDb.Genre = movies.Genre;
+            mFromDb.Rating = movies.Rating;
             mFromDb.Date = movies.Date;
             mFromDb.ImageUrl = movies.ImageUrl;
+            mFromDb.Description = movies.Description;
 
             _db.SaveChanges();
         }

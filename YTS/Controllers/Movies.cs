@@ -35,8 +35,6 @@ namespace YTS.Controllers
             {
                 Movies = new Models.Movies(),
                 QualityList = _unitofWork.Quality.GetDropDownListForQuality(),
-                GenresList = _unitofWork.Genres.GetDropDownListForGenres(),
-                RatingsList = _unitofWork.Ratings.GetDropDownListForRatings()
             };
 
             if(id != null)
@@ -104,8 +102,6 @@ namespace YTS.Controllers
             else
             {
                 AVM.QualityList = _unitofWork.Quality.GetDropDownListForQuality();
-                AVM.GenresList = _unitofWork.Genres.GetDropDownListForGenres();
-                AVM.RatingsList = _unitofWork.Ratings.GetDropDownListForRatings();
 
                 return View(AVM);
             }
@@ -115,7 +111,7 @@ namespace YTS.Controllers
 
         public IActionResult GetAll()
         {
-            return Json(new { data = _unitofWork.Movies.GetAll(includeProperties: "Quality,Genres,Ratings") });
+            return Json(new { data = _unitofWork.Movies.GetAll(includeProperties: "Quality") });
         }
 
         [HttpDelete]

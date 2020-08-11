@@ -9,10 +9,6 @@ namespace YTS.Repository.IRepository
     {
         IQualityRepo Quality { get; }
 
-        IGenresRepo Genres { get; }
-
-        IRatingsRepo Ratings { get; }
-
         IMoviesRepo Movies { get; }
 
         void Save();

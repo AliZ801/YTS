@@ -15,9 +15,9 @@ function loadDataTable() {
         "columns": [
             { "data": "id", "width": "10%" },
             { "data": "title", "width": "25%" },
-            { "data": "genres.genre", "width": "21%" },
+            { "data": "genre", "width": "21%" },
             { "data": "quality.qual", "width": "12%" },
-            { "data": "ratings.rating", "width": "12%" },
+            { "data": "rating", "width": "12%" },
             {
                 "data": "id",
                 "render": function (data) {
