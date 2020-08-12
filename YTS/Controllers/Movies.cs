@@ -107,6 +107,13 @@ namespace YTS.Controllers
             }
         }
 
+        public IActionResult Details(int id)
+        {
+            var mFromDb = _unitofWork.Movies.GetFirstOrDefault(includeProperties: "Quality", filter: i => i.Id == id);
+
+            return View(mFromDb);
+        }
+
         #region API CALLS
 
         public IActionResult GetAll()

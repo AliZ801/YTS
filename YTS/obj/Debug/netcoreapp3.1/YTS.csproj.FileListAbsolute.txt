@@ -410,7 +410,6 @@ C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Y
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.RazorCoreGenerate.cache
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Movies\AddMovie.cshtml.g.cs
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Movies\Index.cshtml.g.cs
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Quality\AddQuality.cshtml.g.cs
@@ -433,3 +432,4 @@ C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Y
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.pdb
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.genruntimeconfig.cache
 C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\YTS.csprojAssemblyReference.cache
+C:\Users\alizu.ZUBAIR-ASBOS\Documents\Projects\YTS\YTS\obj\Debug\netcoreapp3.1\Razor\Views\Movies\Details.cshtml.g.cs

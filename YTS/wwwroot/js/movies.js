@@ -22,6 +22,10 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
+                                <a href="Movies/Details/${data}" class="btn btn-success text-white" style="cursor:pointer; width:40px">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                &nbsp;
                                 <a href="Movies/AddMovie/${data}" class='btn btn-success text-white' style='cursor:pointer; width:40px;'>
                                     <i class='far fa-edit'></i>
                                 </a>
